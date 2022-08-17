@@ -5,10 +5,13 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 're
 
 class DishDetails extends Component{
 
-    constructor(props){
-        super(props);
+    componentDidMount(){
+        console.log('Dish Details compoenet componentDidMount is invoked');
+      }
 
-    }
+    componentDidUpdate(){
+        console.log('Dish Details compoenet componentDidUpdateb  is invoked');
+      }
 
     commentiterate(comments){
         
@@ -18,7 +21,7 @@ class DishDetails extends Component{
             <div className='col-12 mt-4'>{comments.comment}</div>
             <div className='row'>
                 <div className='col-auto  text-md-left ml-3 mt-1'>--{comments.author},</div>
-                <div className='col-auto mt-1'>{comments.date}</div>
+                <div className='col-auto mt-1'>{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comments.date)))}</div>
             </div>
             </div>
            );  
@@ -88,9 +91,9 @@ class DishDetails extends Component{
 
     render(){
 
-        const selecteddish = this.props.selectedDish;
+        const selecteddish = this.props.dish;
         //console.log(selecteddish);
-        
+        console.log('Dish Details compoenet Render is invoked');
         return (
         <div className="container">
             <div className='row'>

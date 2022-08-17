@@ -1,8 +1,6 @@
 //import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar, NavbarBrand} from 'reactstrap';
-import Menu from './components/MenuComponent'
-import './App.css';
+import Main from './components/MainComponent'
 import { DISHES } from './shared/dishes';
 import { Component } from 'react';
 
@@ -20,12 +18,7 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-      <Navbar dark color="primary">
-        <div className="container">
-          <NavbarBrand href="/">Ristontrate con Fusion</NavbarBrand>
-        </div>
-      </Navbar>
-      <Menu  dishes={this.state.dishes} />
+       <Main />
     </div>
   );
   }
