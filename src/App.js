@@ -4,9 +4,11 @@ import Main from './components/MainComponent'
 import { DISHES } from './shared/dishes';
 import { Component } from 'react';
 
+import { BrowserRouter } from 'react-router-dom';
+
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -15,12 +17,15 @@ class App extends Component {
   }
 
 
-  render(){
-  return (
-    <div className="App">
-       <Main />
-    </div>
-  );
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <Main />
+        </div>
+      </BrowserRouter>
+
+    );
   }
 }
 
